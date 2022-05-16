@@ -1,0 +1,173 @@
+/* Resets */
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+ *:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/* Containers styles */
+
+body{
+    display: flex;
+    background-color: rgb(11, 11, 34);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.root{
+    margin: 0 auto;
+    min-width: 680px;
+    min-height: 400px;
+    background-image: linear-gradient(30deg, #4297A0, #2F5061 );
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    max-width: 680px;
+    min-height: 100px;
+    background-color: #2F5061;
+}
+
+.header__delete-Btn{
+    width: 130px;
+    height: 60px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;   
+}
+
+.header__input{
+    width: 270px;
+    height: 60px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;   
+}
+
+.header__add-btn{
+    width: 130px;
+    height: 60px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    background: #4297A0;
+    width: 500px;
+    min-height: 50px;
+    border-radius: 10px;
+}
+
+.task__checkbox{
+    padding-left: 23px;
+    font-size: 30px;
+}
+
+.task__text{
+    padding: 5px;
+    width: 300px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+.task__right-panel{
+    display: flex;
+    flex-direction: column;
+}
+
+.task__delete-btn{
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 5px;
+    padding: 3px 7px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+.task__date{
+    font-size: 13px;
+}
+
+.task__text-completed{
+    text-decoration: line-through;
+} 
+
+.task-completed{
+    background-color: rgb(16, 90, 90);
+}
