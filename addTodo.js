@@ -1,5 +1,5 @@
-import { main } from "layout.js";
-import { localDate } from "variables.js";
+import { main } from "./layout.js";
+import { localDate } from "./variables.js";
 
 const addTodo = (todoText, isChecked, todoId) => {
     const task = document.createElement("div");
