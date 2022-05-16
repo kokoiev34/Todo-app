@@ -1,6 +1,6 @@
-import { root, header, main, deleteAllBtn, input, addBtn} from "layout.js";
-import { todosFromStorage, tasksArray } from "variables.js";
-import { addTodo } from "addTodo.js"
+import { root, header, main, deleteAllBtn, input, addBtn} from "/layout.js";
+import { todosFromStorage, tasksArray } from "/variables.js";
+import { addTodo } from "/addTodo.js"
 
 const TodoConstructor = function (todoText, todoId, isChecked) {
     this.todoText = todoText;
